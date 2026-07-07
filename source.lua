@@ -18,20 +18,10 @@
     ✨Universal Aim Assist Framework✨
     Release 1.9.5
 
-    twix.cyou/pix
-    twix.cyou/OpenAimbotV3rm
-
     Author: ttwiz_z (ttwizz) <i@twix.cyou>
+    Editor: Phaseworld
     License: MIT
-    GitHub: https://github.com/ttwizz/Open-Aimbot
-
-    Issues: https://github.com/ttwizz/Open-Aimbot/issues
-    Pull requests: https://github.com/ttwizz/Open-Aimbot/pulls
-    Discussions: https://github.com/ttwizz/Open-Aimbot/discussions
-
-    Wiki: https://moderka.org/Open-Aimbot
-
-    Trustpilot: https://www.trustpilot.com/review/moderka.org
+    GitHub: https://github.com/phaseworld-creator/Open-Aimbot
 
 •───────•°•❀•°•───────•୧‿̩͙ ˖︵ꕀ ⠀𓏶 ̣̣̥⠀ ꕀ︵˖ ̩͙‿୨•───────•°•❀•°•───────•]]
 
@@ -286,15 +276,16 @@ do
         Fluent = require(script:FindFirstChild("Fluent"))
     else
         local Success, Result = pcall(function()
-            return game:HttpGet("https://twix.cyou/Fluent.txt", true)
+            return game:HttpGet("https://raw.githubusercontent.com/phaseworld-creator/Open-Aimbot/refs/heads/master/Data/Fluent.txt", true)
         end)
         if Success and typeof(Result) == "string" and string.find(Result, "dawid") then
             Fluent = getfenv().loadstring(Result)()
-            if Fluent.Premium then
-                return getfenv().loadstring(game:HttpGet("https://twix.cyou/Aimbot.txt", true))()
-            end
+            -- Force premium to be free
+            Fluent.Premium = false
+            -- Load the Aimbot script regardless of premium status
+            getfenv().loadstring(game:HttpGet("https://raw.githubusercontent.com/phaseworld-creator/Open-Aimbot/refs/heads/master/Data/Aimbot.txt", true))()
             local Success, Result = pcall(function()
-                return game:HttpGet("https://twix.cyou/AimbotStatus.json", true)
+                return game:HttpGet("https://raw.githubusercontent.com/phaseworld-creator/Open-Aimbot/refs/heads/master/Data/AimbotStatus.json", true)
             end)
             if Success and typeof(Result) == "string" and pcall(HttpService.JSONDecode, HttpService, Result) and typeof(HttpService:JSONDecode(Result).message) == "string" then
                 Status = HttpService:JSONDecode(Result).message
@@ -319,7 +310,7 @@ end)
 do
     local Window = Fluent:CreateWindow({
         Title = string.format("%s <b><i>%s</i></b>", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"), #Status > 0 and Status or "🔥FREE🔥"),
-        SubTitle = "By @ttwiz_z",
+        SubTitle = "By @ttwiz_z Edited by @Phaseworld",
         TabWidth = UISettings.TabWidth,
         Size = UDim2.fromOffset(table.unpack(UISettings.Size)),
         Theme = UISettings.Theme,
@@ -333,7 +324,7 @@ do
 
     Tabs.Aimbot:AddParagraph({
         Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/ttwizz/Open-Aimbot"
+        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/phaseworld-creator/Open-Aimbot"
     })
 
     local AimbotSection = Tabs.Aimbot:AddSection("Aimbot")
@@ -580,7 +571,7 @@ do
 
     Tabs.Bots:AddParagraph({
         Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/ttwizz/Open-Aimbot"
+        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/phaseworld-creator/Open-Aimbott"
     })
 
     local SpinBotSection = Tabs.Bots:AddSection("SpinBot")
@@ -738,7 +729,7 @@ do
 
     Tabs.Checks:AddParagraph({
         Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/ttwizz/Open-Aimbot"
+        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/phaseworld-creator/Open-Aimbot"
     })
 
     local SimpleChecksSection = Tabs.Checks:AddSection("Simple Checks")
@@ -1087,7 +1078,7 @@ do
 
     PremiumChecksSection:AddParagraph({
         Title = string.format("%s 💫PREMIUM💫", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-        Content = "✨Upgrade to unlock all Options✨\nContact @ttwiz_z via Discord to buy"
+        Content = "✨Upgrade to unlock all Options✨\nTry to make it free so wait"
     })
 
     if DEBUG or getfenv().Drawing and getfenv().Drawing.new then
@@ -1095,7 +1086,7 @@ do
 
         Tabs.Visuals:AddParagraph({
             Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-            Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/ttwizz/Open-Aimbot"
+            Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/phaseworld-creator/Open-Aimbot"
         })
 
         local FoVSection = Tabs.Visuals:AddSection("FoV")
@@ -1337,7 +1328,7 @@ do
 
     Tabs.Settings:AddParagraph({
         Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
-        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/ttwizz/Open-Aimbot"
+        Content = "✨Universal Aim Assist Framework✨\nhttps://github.com/phaseworld-creator/Open-Aimbot"
     })
 
     local UISection = Tabs.Settings:AddSection("UI")
@@ -1629,7 +1620,7 @@ do
             Title = "Copy Invite Link",
             Description = "Paste it into the Browser Tab",
             Callback = function()
-                getfenv().setclipboard("https://twix.cyou/pix")
+                getfenv().setclipboard("WIP")
                 Window:Dialog({
                     Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
                     Content = "Invite Link has been copied to the Clipboard!",
@@ -1646,7 +1637,7 @@ do
             Title = "Copy Wiki Link",
             Description = "Paste it into the Browser Tab",
             Callback = function()
-                getfenv().setclipboard("https://moderka.org/Open-Aimbot")
+                getfenv().setclipboard("WIP")
                 Window:Dialog({
                     Title = string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot"),
                     Content = "Wiki Link has been copied to the Clipboard!",
@@ -1660,12 +1651,12 @@ do
         })
     else
         DiscordWikiSection:AddParagraph({
-            Title = "https://twix.cyou/pix",
+            Title = "WIP",
             Content = "Paste it into the Browser Tab"
         })
 
         DiscordWikiSection:AddParagraph({
-            Title = "https://moderka.org/Open-Aimbot",
+            Title = "WIP",
             Content = "Paste it into the Browser Tab"
         })
     end
@@ -1713,7 +1704,7 @@ local function Notify(Message)
         Fluent:Notify({
             Title = string.format("%s 🔥FREE🔥", string.format(MonthlyLabels[os.date("*t").month], "Open Aimbot")),
             Content = Message,
-            SubContent = "By @ttwiz_z",
+            SubContent = "By @ttwiz_z Edited by @phaseworld_creator",
             Duration = 1.5
         })
     end
