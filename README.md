@@ -1,7 +1,7 @@
 <div align="center">
     <h1>Open Aimbot</h1>
 
-Welcome to the **pix**! We develop various utilities for Roblox, security systems, protection and scripts for specific games, general scenarios. You can find more of our projects on our [Discord Server](https://twix.cyou/pix).
+Welcome to the **pix**! We develop various utilities for Roblox, security systems, protection and scripts for specific games, general scenarios.
 </div>
 
 ___
@@ -20,10 +20,10 @@ Open Aimbot is a **universal** open source framework. It offers a wide selection
 #### Made with love,
 
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ttwizz/Open-Aimbot/master/source.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/phaseworld-creator/Open-Aimbot/master/source.lua", true))()
 ```
 
 <p align="center">
     <img src="https://i.gyazo.com/3c36be2f6dd82c196967d0dcd61145a7.gif" alt="Open Aimbot" />
-    Copyright (c) 2024 ttwiz_z
+    Copyright (c) 2026 PhaseWorld
 </p>
